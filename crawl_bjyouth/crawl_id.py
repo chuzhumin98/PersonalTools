@@ -67,6 +67,9 @@ def crawlId(driver_path, id, password):
 
         nextpages = driver.find_elements_by_class_name('next')
 
+        if len(nextpages) == 0:
+            break
+
         if nextpages[0].tag_name == 'a':
             nextpages[0].click()
             sleep(4)
